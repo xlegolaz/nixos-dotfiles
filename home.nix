@@ -38,6 +38,41 @@ in
 		
 	#};
 
+	# Compositor para x11 window managers
+	services.picom = {
+		enable = true;
+		vSync = true;
+		#shadow = true;
+		#shadowOpacity = 0.6;
+		#shadowOffsets = [
+		#	(-3)
+		#	(-3)
+		#];
+		fade = true;
+		fadeSteps = [
+			0.05
+			0.05
+		];
+		fadeDelta = 10;
+		#menuOpacity = 1.0;
+		#inactiveOpacity = 1.0;
+		#activeOpacity = 1.0;
+		#opacityRules = [
+  		#	"100:class_g    = 'XTerm'"
+ 		#	"100:class_g    = 'URxvt'"
+  		#	"100:class_g    = 'firefox'"
+  		#	"100:class_g    = 'Thunderbird'"
+		#];
+		#wintypes = {
+		#	normal = { fade = false; shadow = true; };
+  		#	tooltip = { fade = false; shadow = false; opacity = 1.0; focus = true; full-shadow = false; };
+  		#	dock = { shadow = false; };
+  		#	dnd = { shadow = false; };
+  		#	popup_menu = { opacity = 1.0; shadow = false; fade = false; };
+  		#	dropdown_menu = { opacity = 1.0; shadow = false; fade = false; };
+		#};
+        };
+
 	home.packages = with pkgs; [
 		ripgrep
 		fd
@@ -52,5 +87,6 @@ in
 		feh
 		lxsession
 		btop
+		flameshot
 	];
 }

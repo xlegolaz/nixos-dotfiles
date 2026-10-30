@@ -43,10 +43,6 @@
 	enable32Bit = true;
   };
 
-  services.picom = {
-	enable = true;
-	vSync = true;
-  };
   
   nixpkgs.config.allowUnfree = true; 
 
